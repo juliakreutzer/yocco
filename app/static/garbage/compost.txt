@@ -1,0 +1,5 @@
+toilet_tissue   0.4
+toilet_paper    0.2
+bathroom_tissue 0.2
+paper_towel 0.1
+wooden_spoon    0.1

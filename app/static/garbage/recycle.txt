@@ -1,0 +1,13 @@
+plastic_bag 0.4
+ashcan  0.4
+trash_can   0.2
+garbage_can 0.1
+plate   0.9
+cup 0.22
+milk_can    0.2
+bottlecap   0.1
+corkscrew   0.1
+bottle_screw    0.01
+shopping_basket 0.3
+water_bottle    0.9
+comic_book  0.3

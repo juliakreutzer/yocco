@@ -21,13 +21,13 @@
     <title>YOCCO Garbage Classification</title>
   </head>
   <body class="text-center">
+    <h1>YOCCO Garbage Classification</h1>
+    <img src="https://media.giphy.com/media/pZd3cASYgZ7s4/giphy.gif" alt="Wall-E" vspace=30/>
     <form class="form-signin" method=post enctype=multipart/form-data>
-	    <!--<img class="mb-4" src="/static/pytorch.png" alt="" width="72">-->
-        <h1 class="h3 mb-3 font-weight-normal">Upload a picture of the trash you collected.</h1>
+        <h1 class="h3 mb-3 font-weight-normal">Upload a picture of the trash you collected!</h1>
         <input type="file" name="file" class="form-control-file" id="inputfile">
         <br/>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Upload</button>
-	<!-- <p class="mt-5 mb-3 text-muted">Built using Pytorch, Flask and Love</p>-->
     </form>
     <script src="//code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
@@ -35,9 +35,9 @@
     <script type="text/javascript">
       $('#inputfile').bind('change', function() {
           let fileSize = this.files[0].size/1024/1024; // this gives in MB
-          if (fileSize > 1) {
+          if (fileSize > 4) {
             $("#inputfile").val(null);
-            alert('file is too big. images more than 1MB are not allowed')
+            alert('file is too big. images more than 4MB are not allowed')
             return
           }
 

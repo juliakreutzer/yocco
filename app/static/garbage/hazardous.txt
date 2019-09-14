@@ -1,0 +1,2 @@
+hair_spray  0.4
+syringe 0.3
