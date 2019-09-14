@@ -4,7 +4,7 @@ import json
 from torchvision import models
 import torchvision.transforms as transforms
 from PIL import Image
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template, redirect
 
 
 app = Flask(__name__)
@@ -34,15 +34,17 @@ def get_prediction(image_bytes):
     return imagenet_class_index[predicted_idx]
 
 
-@app.route('/predict', methods=['POST'])
+@app.route('/', methods=['POST', 'GET'])
 def predict():
     if request.method == 'POST':
         file = request.files['file']
         img_bytes = file.read()
         class_id, class_name = get_prediction(image_bytes=img_bytes)
-        return jsonify({'class_name': class_name}) 
+        return render_template('result.html',class_id=class_id,
+                               class_name=class_name)
+        # jsonify({'class_name': class_name}) 
         # jsonify({'class_id': class_id, 'class_name': class_name})
-
+    return render_template('index.html')
 
 if __name__ == '__main__':
     app.run()
