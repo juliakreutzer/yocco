@@ -17,3 +17,16 @@ dark_glasses    0.3
 shades  0.2
 umbrella    0.3
 can_opener  0.3
+carbonara   0.2
+chocolate_sauce 0.1
+chocolate_syrup 0.1
+meat_loaf   0.2
+meatloaf    0.1
+pizza   0.2
+pizza_pie   0.2
+potpie  0.1
+burrito 0.1
+ice_lolly   0.1
+lolly   0.1
+lollipop    0.1
+popsicle 0.1

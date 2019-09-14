@@ -1,0 +1,6 @@
+{
+  "name": "YOCCO Garbage Classification",
+  "description": "Garbage Classification built on PyTorch",
+  "repository": "https://github.com/juliakreutzer/yocco",
+  "keywords": ["python", "flask", "pytorch"]
+}
