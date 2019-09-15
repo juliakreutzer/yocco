@@ -13,7 +13,10 @@ Run the server:
 And upload pictures to try out the garbage detection AI. Example test images are in `test_images`.
 
 ## Mobile App
-HTMLs in khaled/YOCCO.
+HTMLs in khaled/YOCCO
+
+## Image Recognition
+Our image recognition models are based on pre-trained models (DenseNet121 and MobileNet, trained on ImageNet) provided by [Torch](https://pytorch.org/docs/stable/torchvision/models.html) and [Keras](https://keras.io/applications/#mobilenet). We fine-tuned MobileNet to classify garbage material based on the [TrashNet data collection](https://github.com/garythung/trashnet).
 
 ## Contributors
 Julia Kreutzer, Salma Elmahallawy, Khaled Matloub, Kene Nnodu, Reza Filsoof
