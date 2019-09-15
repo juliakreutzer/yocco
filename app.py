@@ -1,16 +1,25 @@
 import io
 import json
 import os
-
+import numpy as np
 from torchvision import models
 import torchvision.transforms as transforms
 from PIL import Image
 from flask import Flask, jsonify, request, render_template, redirect
 from .utils import load_classes
+from keras.preprocessing.image import img_to_array
+from keras.preprocessing.image import load_img
+from keras.models import load_model
+import tensorflow as tf
 
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 imagenet_class_index = json.load(open('imagenet_class_index.json'))
+waste_types = ['cardboard', 'glass', 'metal', 'paper', 'plastic', 'trash']
+global waste_model
+waste_model = load_model('hack_vgg.h5')
+global graph
+graph = tf.get_default_graph()
 model = models.densenet121(pretrained=True)
 class_dict = load_classes('static/garbage/')
 model.eval()
@@ -65,12 +74,26 @@ def predict():
         img_bytes = file.read()
         with open(temp_file, mode="wb") as jpg:
             jpg.write(img_bytes)
+        # ImageNet prediction
         class_id, class_name = get_prediction(image_bytes=img_bytes)
         garbage_type, co = garbage_class(class_name)
+        # Waste model prediction
+        img = load_img(temp_file, target_size=(150, 150))
+        img = img_to_array(img) / 255.
+        img = np.expand_dims(img, axis=0)
+        with graph.as_default():
+            waste_model._make_predict_function()
+            waste_pred = waste_model.predict(img)[0]
+        index = np.argmax(waste_pred)
+        waste_label = waste_types[index]
+        accuracy = "{0:.2f}".format(waste_pred[index] * 100)
+
         return render_template('result.html',
                                class_name=class_name,
                                garbage_type=garbage_type,
-                               co=co)
+                               co=co, waste_label=waste_label,
+                               waste_acc=accuracy)
+
     if os.path.exists(temp_file):
         os.remove(temp_file)  # this deletes the file
 
