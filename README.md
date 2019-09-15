@@ -10,6 +10,8 @@ Run the server:
 
 	FLASK_ENV=development FLASK_APP=app.py python3.5 -m flask run
 
+And upload pictures to try out the garbage detection AI. Example test images are in `test_images`.
+
 ## Mobile App
 HTMLs in khaled/YOCCO.
 
