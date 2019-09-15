@@ -3,4 +3,7 @@ https://download.pytorch.org/whl/cpu/torch-1.0.0-cp35-cp35m-linux_x86_64.whl
 torchvision==0.2.1
 numpy==1.16.4
 PIL
-keras
+Keras==2.2.5
+Keras-Applications==1.0.8
+Keras-Preprocessing==1.1.0
+tensorflow==1.14.0
