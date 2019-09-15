@@ -19,7 +19,7 @@
         body {
           background-color: rgba(189,232,244,1);
           font-family: 'Livvic';
-          font-size: 24px;
+          font-size: 20px;
           color:  black;
         }
         h1 {
@@ -52,10 +52,11 @@
           margin: 4px 2px;
           cursor: pointer;
         }
-      img.resize {
-          max-width: 40%;
-          max-height: 40%;
-      }
+      img {
+          max-height:50%;
+          width:auto;
+        }
+
          a {
         color: black;
         text-decoration: none;
@@ -73,7 +74,7 @@
     <form class="form-signin" method=post enctype=multipart/form-data>
 
         <br>
-        <table style="width:40%" align="center">
+        <table style="width:50%" align="center">
           <tr>
               <td align="left"><strong>Detected garbage type:</strong> </td>
             <td align="left">{{ garbage_type }} ({{ class_name }})</td>
@@ -87,8 +88,9 @@
             <td align="left">{{ co }}g</td>
           </tr>
         </table>
-          <img class="resize" src="static/temp/upload.jpg" alt="Uploaded image" vspace=50 style="border:15px solid white">
     </form>
+              <img src="static/temp/upload.jpg" alt="Uploaded image" vspace=50 style="border:15px solid white">
+    <br>
     <img src="static/img/arrow_side.png" alt="arrow back" hspace=10><a href="./">Back</a>
   </body>
 </html>
