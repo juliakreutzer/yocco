@@ -18,7 +18,7 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 imagenet_class_index = json.load(open('imagenet_class_index.json'))
 waste_types = ['cardboard', 'glass', 'metal', 'paper', 'plastic', 'trash']
 global waste_model
-waste_model = load_model('hack_mobilenet.h5') #'hack_vgg.h5')
+waste_model = load_model('hack_mobilenet.h5')
 global graph
 graph = tf.get_default_graph()
 model = models.densenet121(pretrained=True)
