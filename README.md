@@ -17,6 +17,10 @@ Run the server:
 
 And upload pictures to try out the garbage detection AI. Example test images are in `test_images`.
 
+### Screenshots
+<img src="https://raw.githubusercontent.com/juliakreutzer/yocco/master/upload.png" width="400">
+<img src="https://raw.githubusercontent.com/juliakreutzer/yocco/master/detection.png" width="400">
+
 ## Mobile App
 HTMLs in khaled/YOCCO
 
