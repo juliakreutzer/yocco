@@ -41,6 +41,4 @@ custard_apple   0.1
 pomegranate 0.1
 hay 0.2
 dough   0.1
-ice_cream   0.1
-icecream    0.1
 french_loaf   0.1

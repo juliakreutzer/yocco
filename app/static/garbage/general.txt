@@ -30,3 +30,5 @@ ice_lolly   0.1
 lolly   0.1
 lollipop    0.1
 popsicle 0.1
+ice_cream   0.1
+icecream    0.1

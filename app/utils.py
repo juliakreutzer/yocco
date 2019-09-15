@@ -15,6 +15,8 @@ def load_classes(dir):
         class_dict[class_name] = []
         with open(dir+'/'+file_name, 'r') as f:
             for line in f:
-                object, co = line.strip().split()
-                class_dict[class_name].append((object, co))
+                splitted = line.strip().split()
+                obj = splitted[0]
+                co = splitted[-1]
+                class_dict[class_name].append((obj, co))
     return class_dict

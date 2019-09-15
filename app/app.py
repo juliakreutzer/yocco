@@ -42,14 +42,17 @@ def garbage_class(class_name):
 
     :param class_name: ImageNet class name.
     :return:
-        Garbage class, one of "compost", "recycle", "general", "hazardous".
+        Garbage class message.
         CO2 mass, also string.
     """
     normalized = class_name.split(',')[0].lower()
     for c, v in class_dict.items():
         for o, co in v:
             if normalized == o:
-                return c, co
+                message = c
+                if c == 'compost':
+                    message += ', check if still edible first'
+                return message, co
     return "No garbage, detected a {}".format(normalized.replace('_', ' ')), "?"
 
 
