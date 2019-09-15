@@ -8,6 +8,7 @@ from PIL import Image
 from flask import Flask, jsonify, request, render_template, redirect
 from .utils import load_classes
 from keras.preprocessing.image import img_to_array
+from keras.applications.mobilenet import decode_predictions, preprocess_input
 from keras.preprocessing.image import load_img
 from keras.models import load_model
 import tensorflow as tf
@@ -17,7 +18,7 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 imagenet_class_index = json.load(open('imagenet_class_index.json'))
 waste_types = ['cardboard', 'glass', 'metal', 'paper', 'plastic', 'trash']
 global waste_model
-waste_model = load_model('hack_vgg.h5')
+waste_model = load_model('hack_mobilenet.h5') #'hack_vgg.h5')
 global graph
 graph = tf.get_default_graph()
 model = models.densenet121(pretrained=True)
@@ -78,9 +79,10 @@ def predict():
         class_id, class_name = get_prediction(image_bytes=img_bytes)
         garbage_type, co = garbage_class(class_name)
         # Waste model prediction
-        img = load_img(temp_file, target_size=(150, 150))
-        img = img_to_array(img) / 255.
+        img = load_img(temp_file, target_size=(224, 224))
+        #img = img_to_array(img) / 255.
         img = np.expand_dims(img, axis=0)
+        img = preprocess_input(img)
         with graph.as_default():
             waste_model._make_predict_function()
             waste_pred = waste_model.predict(img)[0]
