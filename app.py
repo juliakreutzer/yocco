@@ -10,9 +10,9 @@ from .utils import load_classes
 
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
-imagenet_class_index = json.load(open('app/imagenet_class_index.json'))
+imagenet_class_index = json.load(open('imagenet_class_index.json'))
 model = models.densenet121(pretrained=True)
-class_dict = load_classes('app/static/garbage/')
+class_dict = load_classes('static/garbage/')
 model.eval()
 
 
@@ -59,7 +59,7 @@ def garbage_class(class_name):
 @app.route('/', methods=['POST', 'GET'])
 def predict():
     # TODO ugly handling of temp files.
-    temp_file = "app/static/temp/upload.jpg"
+    temp_file = "static/temp/upload.jpg"
     if request.method == 'POST':
         file = request.files['file']
         img_bytes = file.read()

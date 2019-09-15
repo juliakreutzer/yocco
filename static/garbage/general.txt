@@ -12,6 +12,7 @@ hanky   1.0
 hankey  1.0
 sandal  0.8
 running_shoe    0.1
+sunglass    0.1
 sunglasses  0.1
 dark_glasses    0.3
 shades  0.2
