@@ -1,2 +1,8 @@
 hair_spray  0.4
 syringe 0.3
+electric_ray    0.3
+electric_fan    0.1
+hand-held_computer  0.1
+cellular_telephone  0.1
+computer_keyboard   0.2
+television  0.2
