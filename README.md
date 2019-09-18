@@ -1,6 +1,6 @@
 # &nbsp; ![YOCCO](https://raw.githubusercontent.com/juliakreutzer/yocco/master/static/img/logo.png)
 
-Submission the [Climate Change AI Hackathon 2019, Montreal.](https://climate-change-ai-hackathon.devpost.com/).
+Submission the [Climate Change AI Hackathon 2019, Montreal](https://climate-change-ai-hackathon.devpost.com/), see [DevPost post](https://devpost.com/software/yocco-you-only-live-once).
 We have created an application that uses Deep Learning to detect objects and classifies the method for waste management (recycling, compost, trash, hazardous).
 
 ## Motivation
